@@ -1,0 +1,25 @@
+{% extends "AppLogin/home.html" %}
+
+{% block titulo_de_pagina %}
+
+
+    <h1 class="mb-5">POST</h1>
+
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+
+    <h1 align="center">{{ post.titulo }}</h1>
+    <h2 align="center">{{ post.subtitulo }}</h2>
+    <img align="center" src="{{ post.imagen.url }}" width="400" height="400">
+    <h3 align="center"> {{ post.contenido | safe}} </h3>
+    <h6 align="center"> autor:{{ post.autor }}  publicado el:{{ post.fecha_publicacion }}</h6>
+   
+{% endblock %}
+
+{% block inicio %}
+{% endblock %}
+
+{% block contenido_inicio %}
+{% endblock %}

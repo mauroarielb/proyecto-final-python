@@ -1,0 +1,26 @@
+{% extends "AppLogin/home.html" %}
+
+
+
+{% block titulo_de_pagina %}
+<h1 class="mb-5">EDITAR POSTEOS</h1>
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+<h2>EDITA A GUSTO! </h2>
+{% load crispy_forms_tags%}
+<form action="{% url 'editarPost' id  %}" class="mt-3" method="POST"> {% csrf_token %}
+    <table>
+        {{ formulario|crispy }}
+    </table>
+<input type="submit", value="Guardar">
+
+</form>
+
+{% endblock %}
+{% block inicio %}
+{% endblock %}
+
+{% block contenido_inicio %}
+{% endblock %}

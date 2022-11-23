@@ -1,0 +1,23 @@
+{% extends "AppLogin/home.html" %}
+
+{% load static %}
+
+
+{% block titulo_de_pagina %}
+<h1 class="mb-5">EDICION DE PERFIL DE {{ usuario }}</h1>
+{% endblock %}
+
+
+{% block contenido_que_cambia %}
+<h1>edicion del perfil</h1>
+<h1>{{ mensaje }}</h1>
+<form action="{% url 'edicionPerfil' %}"  method="POST"> {% csrf_token %}
+
+    {{ form.as_p }}
+    <button type="submit">guardar cambios</button>
+
+</form>
+
+{% endblock %}
+{% block inicio %}
+{% endblock %}
